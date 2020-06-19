@@ -6,12 +6,12 @@
 //  Copyright © 2020 Vitalii Sosin. All rights reserved.
 //
 
-struct News {
+struct News: Decodable {
     let articles: [Articles]?
 }
 
-struct Articles {
+struct Articles: Decodable {
     let title: String?
     let urlToImage: String?
-    let content: String?
+    let description: String?
 }
