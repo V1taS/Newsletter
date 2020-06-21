@@ -13,8 +13,6 @@ class NewsTableViewController: UITableViewController {
     private let networkManager = NetworkingManager()
     private var news = [Articles]()
     
-    var onCompletion: ((Articles) -> Void)?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,8 +22,6 @@ class NewsTableViewController: UITableViewController {
             self.news = news
             self.tableView.reloadData()
         }
-    }
-    @IBAction func goButton() {
     }
     
     // MARK: - Table view data source
@@ -43,20 +39,10 @@ class NewsTableViewController: UITableViewController {
         
         cell.titleLabel.text = currentNews.title
         cell.contentLabel.text = currentNews.description
-        cell.buttonOutlet.layer.cornerRadius = cell.frame.height / 50
         
         getAndSetImage(news: news, cell: cell, indexPath: indexPath)
-        onCompletion?(currentNews)
         
         return cell
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let indexPath = tableView.indexPathForSelectedRow
-        if segue.identifier == "DescriptionSegue" {
-            let descriptionVC = segue.destination as! DescriptionViewController
-            descriptionVC.indexPath = indexPath?.row
-        }
     }
     
     // MARK: - Get image

@@ -17,7 +17,6 @@
 		1B246C3E249C166A00AAD547 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B246C3D249C166A00AAD547 /* News.swift */; };
 		1B246C40249C1C2D00AAD547 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B246C3F249C1C2D00AAD547 /* NewsTableViewCell.swift */; };
 		1B246C43249C1EE900AAD547 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B246C42249C1EE900AAD547 /* Constans.swift */; };
-		1B4C27C3249EB51600F47220 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4C27C2249EB51600F47220 /* DescriptionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +32,6 @@
 		1B246C3D249C166A00AAD547 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		1B246C3F249C1C2D00AAD547 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		1B246C42249C1EE900AAD547 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
-		1B4C27C2249EB51600F47220 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				1B246C38249C15E300AAD547 /* NewsTableViewController.swift */,
-				1B4C27C2249EB51600F47220 /* DescriptionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -214,7 +211,6 @@
 				1B246C40249C1C2D00AAD547 /* NewsTableViewCell.swift in Sources */,
 				1B246C22249C0C9F00AAD547 /* SceneDelegate.swift in Sources */,
 				1B246C3E249C166A00AAD547 /* News.swift in Sources */,
-				1B4C27C3249EB51600F47220 /* DescriptionViewController.swift in Sources */,
 				1B246C43249C1EE900AAD547 /* Constans.swift in Sources */,
 				1B246C39249C15E300AAD547 /* NewsTableViewController.swift in Sources */,
 			);
