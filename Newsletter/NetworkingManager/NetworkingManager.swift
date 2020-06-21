@@ -8,13 +8,9 @@
 
 import Foundation
 
-protocol NetworkingManagerDelegate: class {
-    func updateInterface(with news: [News])
-}
-
 class NetworkingManager {
     
-    var delegate: NetworkingManagerDelegate?
+    var onCompletion: (([Articles]) -> Void)?
     
     func fetchNews() {
         
@@ -23,23 +19,26 @@ class NetworkingManager {
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             
-            if let error = error { print(error); return }
-            if let response = response { print(response) }
-            
-            if let data = data {
-                if let news = self.parseJSON(data: data) {
-                    self.delegate?.updateInterface(with: news)
+            DispatchQueue.main.async {
+                if let error = error { print(error); return }
+                if let response = response { print(response) }
+                
+                if let data = data {
+                    if let news = self.parseJSON(data: data),
+                        let articles = news.articles {
+                        self.onCompletion?(articles)
+                    }
                 }
             }
         }.resume()
     }
     
-    func parseJSON(data: Data) -> [News]? {
+    func parseJSON(data: Data) -> News? {
         
         let decoder = JSONDecoder()
         
         do {
-            let news = try decoder.decode([News].self, from: data)
+            let news = try decoder.decode(News.self, from: data)
             return news
         } catch let error as NSError {
             print(error)
