@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B0AB66824A2A81800B4FCE9 /* DescriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0AB66724A2A81800B4FCE9 /* DescriptionsViewController.swift */; };
 		1B246C20249C0C9F00AAD547 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B246C1F249C0C9F00AAD547 /* AppDelegate.swift */; };
 		1B246C22249C0C9F00AAD547 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B246C21249C0C9F00AAD547 /* SceneDelegate.swift */; };
 		1B246C27249C0C9F00AAD547 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B246C25249C0C9F00AAD547 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B0AB66724A2A81800B4FCE9 /* DescriptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionsViewController.swift; sourceTree = "<group>"; };
 		1B246C1C249C0C9F00AAD547 /* Newsletter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Newsletter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B246C1F249C0C9F00AAD547 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B246C21249C0C9F00AAD547 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				1B246C38249C15E300AAD547 /* NewsTableViewController.swift */,
+				1B0AB66724A2A81800B4FCE9 /* DescriptionsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			files = (
 				1B246C20249C0C9F00AAD547 /* AppDelegate.swift in Sources */,
 				1B246C3C249C163600AAD547 /* NetworkingManager.swift in Sources */,
+				1B0AB66824A2A81800B4FCE9 /* DescriptionsViewController.swift in Sources */,
 				1B246C40249C1C2D00AAD547 /* NewsTableViewCell.swift in Sources */,
 				1B246C22249C0C9F00AAD547 /* SceneDelegate.swift in Sources */,
 				1B246C3E249C166A00AAD547 /* News.swift in Sources */,
