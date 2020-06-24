@@ -11,7 +11,7 @@ struct News: Decodable {
 }
 
 struct Articles: Decodable {
-    let title: String?
+    var title: String?
     let urlToImage: String?
     let description: String?
 }
