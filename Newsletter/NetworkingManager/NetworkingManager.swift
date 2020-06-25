@@ -45,6 +45,7 @@ class NetworkingManager {
         }
         return nil
     }
+    
     //MARK: - Получение изображения по ссылке
     func getAndSetImage(urlImage: String) -> UIImage? {
         guard let imageUrl = URL(string: urlImage) else { return nil }
@@ -54,7 +55,6 @@ class NetworkingManager {
     }
     
     //MARK: - Получение данных через alamofire
-    
     func alamofireGetNews(from urlString: String, with complition: @escaping ([Articles]) -> Void) {
         
         AF.request(urlString)
