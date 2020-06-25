@@ -10,17 +10,26 @@ import UIKit
 
 class NewsTableViewController: UITableViewController {
     
+    @IBOutlet weak var activityIndicatot: UIActivityIndicatorView!
+    
     private var news = [Articles]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NetworkingManager.shared.fetchNews(form: apiKey) { (listNews) in
+        NetworkingManager.shared.alamofireGetNews(from: apiKey) { (listNews) in
             DispatchQueue.main.async {
                 self.news = listNews
                 self.tableView.reloadData()
             }
         }
+        
+//        NetworkingManager.shared.fetchNews(form: apiKey) { (listNews) in
+//            DispatchQueue.main.async {
+//                self.news = listNews
+//                self.tableView.reloadData()
+//            }
+//        }
     }
     
     // MARK: - Table view data source
@@ -38,7 +47,7 @@ class NewsTableViewController: UITableViewController {
         setBorderFor(cell)
         setTextFor(cell, news, indexPath)
         setImageFor(cell, news, indexPath)
-
+        
         return cell
     }
     

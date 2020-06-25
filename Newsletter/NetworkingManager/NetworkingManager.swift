@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class NetworkingManager {
     
@@ -14,6 +15,7 @@ class NetworkingManager {
     
     private init() {}
     
+    //MARK: - Менеджер парсинга Codable
     func fetchNews(form urlString: String, with completion: @escaping ([Articles]) -> Void) {
         
         guard let url = URL(string: urlString) else { return }
@@ -30,7 +32,8 @@ class NetworkingManager {
             }
         }.resume()
     }
-    
+
+    //MARK: - Парсинг данных через Codable
     func parseJSON(data: Data) -> News? {
         
         let decoder = JSONDecoder()
@@ -42,11 +45,28 @@ class NetworkingManager {
         }
         return nil
     }
-    
+    //MARK: - Получение изображения по ссылке
     func getAndSetImage(urlImage: String) -> UIImage? {
         guard let imageUrl = URL(string: urlImage) else { return nil }
         guard let imageData = try? Data(contentsOf: imageUrl) else { return nil }
         guard let image = UIImage(data: imageData) else { return nil }
         return image
+    }
+    
+    //MARK: - Получение данных через alamofire
+    
+    func alamofireGetNews(from urlString: String, with complition: @escaping ([Articles]) -> Void) {
+        
+        AF.request(urlString)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    let news = News.init(dictNews: value as! [String : Any])
+                    complition(news.articles ?? [])
+                case .failure(let error):
+                    print(error)
+                }
+        }
     }
 }
